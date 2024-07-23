@@ -1,0 +1,12 @@
+{
+  "url": "https://www.ncbi.nlm.nih.gov/geo/info/datasets.html#resultstable",
+  "table": {
+    "head_xpath": "/html/body[@id='info']/div[@id='all']/div[@id='page']/div[@id='content']/table[@class='overview'][1]/tbody/tr/th[@class='letter']",
+    "body_xpath": "/html/body[@id='info']/div[@id='all']/div[@id='page']/div[@id='content']/table[@class='overview'][1]/tbody/tr/td",
+    "is_all_data": "yes",
+    "select_area": [
+      1,
+      -1
+    ]
+  }
+}

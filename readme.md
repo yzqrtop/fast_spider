@@ -26,3 +26,7 @@ pip install requests numpy pandas
 ```bash
 python main.py --config_set_path ./config/example_config.json
 ```
+# 结果查看
+```bash
+#在output文件夹下查看结果
+```

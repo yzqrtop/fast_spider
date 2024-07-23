@@ -19,7 +19,8 @@ class SPIDER_MASTER():
     appid = ''
     appkey = ''
     headers = {
-        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36'
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36',
+        'content-type': "multipart/form-data; boundary=---011000010111000001101001"
     }
 
     def __init__(self, url="", username="user", password="123", appid="123", appkey="fds"):
@@ -29,14 +30,13 @@ class SPIDER_MASTER():
         self.appid = str(appid)
         self.appkey = appkey
 
-
-
     def request(self):
         page_text = ""
         try:
             page_text = requests.get(url=self.url, headers=self.headers).text
         except Exception as e:
             raise Exception(f"please check your network, make sure you can link the {self.url}")
+
         self.web_text = page_text
         self.web_tree = etree.HTML(page_text)
         self.save_web_value()
@@ -65,8 +65,8 @@ class SPIDER_MASTER():
 
     def default_deep_path_data_return(self,elements):
         if type(elements) == etree._Element:
-            if elements.text ==None:
-                return [i.text for i in elements]
+            if elements.text == None:
+                return [i.text if i.text else "" for i in elements]
             return elements.text
         else:
             return_result = []

@@ -9,7 +9,6 @@ import argparse
 from models.collection_model import SPIDER_CONFIT_MODEL
 
 if __name__ == '__main__':
-
     # 创建 ArgumentParser 对象
     parser = argparse.ArgumentParser(description='这是一个示例脚本。')
     # 添加参数
